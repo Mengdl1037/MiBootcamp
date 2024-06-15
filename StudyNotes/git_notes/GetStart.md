@@ -218,3 +218,38 @@ git merge origin/main
 ```
 
 Hint: 远程分支也是分支 。
+
+## git stash
+收到紧急需求，如何临时切换
+
+- 背景
+    日常开发过程中，在某个feature分支修改了部分内容，但是还不足以commit，临时需要进行某个紧急需求开发
+- 解决方式
+    git stash命令可以将目前还不想提交的但是已经修改的内容进行保存至堆栈中，后续可以在某个分支上恢复出堆栈中的内容
+
+```
+(feature/xxx)$: git stash   #暂存修改内容
+
+(feature/xxx)$: git checkout  hotfix  #切换分支，开发提交
+(hotfix)$: git add .
+(hotfix)$: git commit -m 'hotfix'
+(hotfix)$: git push
+
+(hotfix)$: git checkout  feature/xxx   #切回原来分支，恢复现场
+(feature/xxx)$: git stash pop
+```
+
+## 后悔药
+
+
+- 当前分支回退
+```git reset --hard <commitID>```
+
+- 公共远程分支版本回退
+git revert用于撤销文件，并且撤销文件后不会影响其他的提交。简单来说，revert做了一个反向操作，并生成新的commitid。如果commitA中增加了几行，对commitA revert后，会生成新的commitB，内容为删除最初增加的几行。
+
+```
+git revert -n <commitId>
+# 如果revert的节点是一个merge commit，需要指明保留哪个分支的内容
+git revert -m 1 <commitID>  #1表示主分支
+```
