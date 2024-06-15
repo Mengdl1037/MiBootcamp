@@ -27,10 +27,7 @@ git config --list
 ```
 
 3. 配置 ~/.ssh/config 文件
-```
-ssh-agent bash
-ssh-add ~/.ssh/id_rsa2
-```
+   
 ```
 # 配置1
 Host user1.github.com
@@ -45,6 +42,12 @@ HostName github.com
 IdentityFile ~/.ssh/id_rsa2
 PreferredAuthenticatoins publickey
 User user2
+```
+
+```
+# 只对当前bash生效
+ssh-agent bash
+ssh-add ~/.ssh/id_rsa2
 ```
 
 4. 测试连接
