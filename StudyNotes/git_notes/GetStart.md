@@ -1,6 +1,6 @@
 # Hello Git
 
-## Basic Setting
+## 基础配置
 
 ### 配置别名 git-log
 
@@ -12,8 +12,11 @@ alias ll='ls -al'
 source ~/.bashrc
 ```
 
+## 基础命令
 
-## Basic Order
+下面这个图可以帮助理解命令是如何改变文件的状态的。
+
+<div align = center> <img src = "./OrderAndStatus.png" alt="命令和状态转换" width = 80%> </div>
 
 ### 初始化
 
@@ -34,17 +37,36 @@ git-log
 git status
 ```
 
-### 添加到缓存区
+### 添加到暂存区
 
 ```
-git add fileName
-git add *
+git add [fileName]
+git add [*]
+```
+
+### 从暂存区删除
+
+```
+git rm --cached [fileName]
+git reset HEAD [fileName]
+```
+
+### 废弃当前修改
+
+```
+git checkout -- [fileName]
+```
+
+### 比较暂存区和版本库差异
+
+```
+git diff --staged
 ```
 
 ### 删除文件
 
 ```
-git rm -rf ***.txt
+git rm -rf [fileName]
 ```
 
 Hint: 不要```rm -rf *```!!!
@@ -64,39 +86,41 @@ git reflog
 ### 回退
 
 ```
-git reset --hard commitID
+git reset --hard [commitID]
 ```
+
+## 分支命令
 
 ### 查看分支
 
 ```
-git branch branchName
+git branch [branchName]
 ```
 
 ### 创建分支
 
 ```
-git branch branchName
+git branch [branchName]
 ```
 
-### 常用分支：feature -> develop -> master/main，还有 hotfix, test, pre
+Hint: 常用分支：feature -> develop -> master/main，还有 hotfix, test, pre
 
 ### 切换分支
 
 ```
-git checkout branchName
+git checkout [branchName]
 ```
 
 ### 创建并切换分支
 
 ```
-git checkout -b branchName
+git checkout -b [branchName]
 ```
 
 ### 合并分支
 
 ```
-git merge branchName
+git merge [branchName]
 ```
 
 Hint: 如果有冲突会将冲突位置标注，手动解决后可add和commit 。
@@ -104,13 +128,13 @@ Hint: 如果有冲突会将冲突位置标注，手动解决后可add和commit �
 ### 检查并删除分支
 
 ```
-git branch -d branchName
+git branch -d [branchName]
 ```
 
 ### 强制删除分支（不进行检查）
 
 ```
-git branch -D branchName
+git branch -D [branchName]
 ```
 
 Hint: 未完全 merge 时可用 -D 强制删除 。
@@ -118,16 +142,16 @@ Hint: 未完全 merge 时可用 -D 强制删除 。
 ### 删除分支后推送到远程
 
 ```
-git push --delete MarkItDown iPad
+git push --delete [brancjName]
 ```
 
 ### 重命名分支名称
 
 ```
-git branch -M main
+git branch -M [main]
 ```
 
-## Remote Repo
+## 远程仓库
 
 ### windows 生成密钥对
 
@@ -146,7 +170,7 @@ ssh -T <git@github.com>
 ### 添加远程仓库
 
 ```
-git remote add origin http://...
+git remote add origin [http://...]
 ```
 
 ### 查看远程仓库
