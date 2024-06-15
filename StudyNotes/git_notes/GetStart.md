@@ -141,6 +141,12 @@ git pull --rebase|-r <main>
 
 # 将当前分支变基到main
 git rebase <main>
+
+
+# 实操
+git rebase main
+# 手动合并
+git rebase --continue
 ```
 
 ## 远程仓库
