@@ -27,14 +27,14 @@ git config --list
 Host user1.github.com
 HostName github.com
 IdentityFile ~/.ssh/id_rsa1
-PreferredAuthenticatoins publickey
+PreferredAuthentications publickey
 User user1
 
 # 配置2
 Host user2.github.com
 HostName github.com
 IdentityFile ~/.ssh/id_rsa2
-PreferredAuthenticatoins publickey
+PreferredAuthentications publickey
 User user2
 ```
 
