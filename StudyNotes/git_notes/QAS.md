@@ -70,3 +70,49 @@ git pull命令是一个高层次的命令，它相当于git fetch和git merge两
 git fetch命令则是用于从远程仓库获取更新，但它不会自动合并到当前分支。相反，它将获取的更新保存在本地，让你可以在需要的时候进行合并操作。
 ```git fetch <remote> <branch>```
 与git pull不同，git fetch只会将远程仓库的更新下载到本地，并不会直接影响当前分支。这为开发者提供了更多的控制权，可以在合适的时机进行合并。
+
+## apt包管理
+
+```
+# 列出所有可更新的软件清单命令：
+sudo apt update
+
+# 升级软件包：
+sudo apt upgrade
+
+# 列出可更新的软件包及版本信息：
+apt list --upgradeable
+
+# 升级软件包，升级前先删除需要更新软件包：
+sudo apt full-upgrade
+
+# 安装指定的软件命令：
+sudo apt install <package_name>
+
+# 安装多个软件包：
+sudo apt install <package_1> <package_2> <package_3>
+
+# 更新指定的软件命令：
+sudo apt update <package_name>
+
+# 显示软件包具体信息,例如：版本号，安装大小，依赖关系等等：
+sudo apt show <package_name>
+
+# 删除软件包命令：
+sudo apt remove <package_name>
+
+# 清理不再使用的依赖和库文件: 
+sudo apt autoremove
+
+# 移除软件包及配置文件: 
+sudo apt purge <package_name>
+
+# 查找软件包命令： 
+sudo apt search <keyword>
+
+# 列出所有已安装的包：
+apt list --installed
+
+# 列出所有已安装的包的版本信息：
+apt list --all-versions
+```
