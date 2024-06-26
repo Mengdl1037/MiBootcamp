@@ -1,0 +1,4 @@
+In Python you can create a list.
+In Python you can create a tuple.
+In Python you can write a loop.
+In Python you can create a class.
