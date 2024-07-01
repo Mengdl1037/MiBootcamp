@@ -211,8 +211,9 @@ detect.py 在各种来源上运行推理， 模型 自动从 最新的YOLOv5 rel
 
 | 模型 | 尺寸（像素） | acc top1 | acc top2 | 推理速度 RTX 3060 Laptop GPU（ms） | 参数量(M) | FLOPs@640 (B) |
 |---|---|---|---|---|---|---|
-| YOLOv5n | 640 | 64.6 | 85.4 | 5.3 | 2.4 | 3.9GFLOPs |
-| YOLOv5s | 640 | 71.5 | 90.2 | 5.3 | 5.4 | 11.4GFLOPs |
+| YOLOv5n-cls | 640 | 64.6 | 85.4 | 5.3 | 2.4 | 3.9GFLOPs |
+| YOLOv5s-cls | 640 | 71.5 | 90.2 | 5.3 | 5.4 | 11.4GFLOPs |
+<!-- | YOLOv5l-cls(wsl2) | 640 | 71.5 | 90.2 | 5.3 | 5.4 | 11.4GFLOPs | -->
 
 
 ## 分割模型
